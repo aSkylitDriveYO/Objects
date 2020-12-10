@@ -15,9 +15,15 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
-}
+function createMenuItem(a,b,c){
+    const newObj = {
+      name:a,
+      price:b,
+      category:c,
+    };
+    return newObj;
+};
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,6 +34,12 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+
+const tacos = createMenuItem("tacos", 5.99, "the best");
+const burrito = createMenuItem("burrito", 3.99, "wow i love it");
+const queso = createMenuItem("queso", 1.99, "yummy");
+console.log(tacos, burrito, queso);
+
 
 
 
@@ -48,8 +60,20 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(str) {
+    if (str ==='teacher') {
+      this.price = 13.5;
+    } else {
+      this.price = 16.2;
+    }
+    return this.price;
+  }
+  
 }
+
+
+console.log(burger.discount('teacher'));
+
 
 
 
@@ -70,7 +94,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
+console.log(reviews[5].feedback);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -79,7 +103,7 @@ Using the reviews array above do the following: (no function needed)
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
-
+reviews.push({name:'Chris', rating:4, feedback:'It was good'});
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
@@ -88,7 +112,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 
 
-
+reviews[7].feedback="this place is chill with really cool people, great for getting work done on weekdays";
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -102,8 +126,8 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}` 
 }
 
 
@@ -121,8 +145,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`
 } 
 
 
